@@ -1,0 +1,104 @@
+!(function () {
+  try {
+    var e =
+        "u" > typeof window
+          ? window
+          : "u" > typeof global
+          ? global
+          : "u" > typeof globalThis
+          ? globalThis
+          : "u" > typeof self
+          ? self
+          : {},
+      t = new e.Error().stack;
+    t &&
+      ((e._sentryDebugIds = e._sentryDebugIds || {}),
+      (e._sentryDebugIds[t] = "54e6ecef-4918-416a-844d-64440dad6ca2"),
+      (e._sentryDebugIdIdentifier =
+        "sentry-dbid-54e6ecef-4918-416a-844d-64440dad6ca2"));
+  } catch (e) {}
+})(),
+  (self.webpackChunk_N_E = self.webpackChunk_N_E || []).push([
+    [358],
+    {
+      170: (e, t, s) => {
+        Promise.resolve().then(s.t.bind(s, 1304, 23)),
+          Promise.resolve().then(s.t.bind(s, 8616, 23)),
+          Promise.resolve().then(s.t.bind(s, 4777, 23)),
+          Promise.resolve().then(s.t.bind(s, 7121, 23)),
+          Promise.resolve().then(s.t.bind(s, 4581, 23)),
+          Promise.resolve().then(s.t.bind(s, 484, 23)),
+          Promise.resolve().then(s.bind(s, 6869));
+      },
+      2755: (e, t, s) => {
+        "use strict";
+        s.r(t), s.d(t, { onRouterTransitionStart: () => l });
+        var a = s(8896),
+          r = s(4810),
+          o = s(6873),
+          i = s(474),
+          n = s(7264);
+        (globalThis._sentryRewritesTunnelPath = void 0),
+          (globalThis.SENTRY_RELEASE = void 0),
+          (globalThis._sentryBasePath = void 0),
+          (globalThis._sentryNextJsVersion = "16.2.3"),
+          (globalThis._sentryRewriteFramesAssetPrefixPath = ""),
+          (globalThis._sentryAssetPrefix = void 0),
+          (globalThis._sentryExperimentalThirdPartyOriginStackFrames = void 0),
+          (globalThis._sentryRouteManifest =
+            '{"dynamicRoutes":[{"path":"/r/:code","regex":"^/r/([^/]+)$","paramNames":["code"],"hasOptionalPrefix":false},{"path":"/s/:code","regex":"^/s/([^/]+)$","paramNames":["code"],"hasOptionalPrefix":false},{"path":"/t/:code","regex":"^/t/([^/]+)$","paramNames":["code"],"hasOptionalPrefix":false}],"staticRoutes":[{"path":"/"},{"path":"/home"},{"path":"/payment-status"}],"isrRoutes":[]}'),
+          a.TsN({
+            dsn: "https://d09296b5d06a942ac21b54f683416022@o4511253977694208.ingest.us.sentry.io/4511265527627776",
+            enabled: !0,
+            sampleRate: 1,
+            tracesSampleRate: 0.2,
+            replaysSessionSampleRate: 0,
+            replaysOnErrorSampleRate: 1,
+            integrations: [r.d()],
+            tracePropagationTargets: [
+              "localhost",
+              /^https:\/\/sorry\.myheartcraft\.com\/api/,
+            ],
+            beforeSend(e) {
+              let t = e.exception?.values?.[0]?.value || "";
+              if (
+                "Script error." === t ||
+                "Script error" === t ||
+                /webkit\.messageHandlers/.test(t) ||
+                /Java object is gone/.test(t) ||
+                /ResizeObserver loop/.test(t) ||
+                /HTTP 404.*\/api\/session\//.test(t)
+              )
+                return null;
+              try {
+                let t = localStorage.getItem("sorry_session_id");
+                t && ((e.tags = e.tags || {}), (e.tags.app_session_id = t));
+              } catch {}
+              return e;
+            },
+          });
+        {
+          let e = () => {
+              o.b("replayIntegration")
+                .then((e) => {
+                  i.Q8(e());
+                })
+                .catch(() => {});
+            },
+            t = () => {
+              "requestIdleCallback" in window
+                ? window.requestIdleCallback(e, { timeout: 3e3 })
+                : setTimeout(e, 1500);
+            };
+          "complete" === document.readyState
+            ? t()
+            : window.addEventListener("load", t, { once: !0 });
+        }
+        let l = n.Nc;
+      },
+    },
+    (e) => {
+      var t = (t) => e((e.s = t));
+      e.O(0, [441, 295], () => (t(2755), t(3861), t(170))), (_N_E = e.O());
+    },
+  ]);
